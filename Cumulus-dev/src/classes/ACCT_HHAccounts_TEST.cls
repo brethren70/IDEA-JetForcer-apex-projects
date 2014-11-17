@@ -881,7 +881,7 @@ private with sharing class ACCT_HHAccounts_TEST {
         
         ID rtIdAccountHH = ACCT_IndividualAccounts_TDTM.rtIdForAccountModel(true);
         if (rtIdAccountHH != null) {
-            Account acc = new Account(name='test');
+            Account acc = new Account/**/(name='test');
             insert acc;
             acc = [select Id, Name, RecordTypeId, npe01__SYSTEMISINDIVIDUAL__c, npe01__SYSTEM_AccountType__c 
                 from Account where Id = :acc.Id];
